@@ -35,7 +35,7 @@ formulario.addEventListener('submit', function(e) {
         if(res==="ok") {
             listarTareas();
             respuesta.innerHTML = `
-            <div class="alert alert-dismissible alert-success">
+            <div class="alert alert-dismissible alert-success" id="alertacreated">
                 <p>Tarea guardada satisfactoriamente</p>
             </div> 
             `
@@ -44,13 +44,20 @@ formulario.addEventListener('submit', function(e) {
             console.log(res);
             listarTareas();
             respuesta.innerHTML = `
-            <div class="alert alert-dismissible alert-success">
+            <div class="alert alert-dismissible alert-success" id="alertaupdate">
                 <p>Tarea Actualizada satisfactoriamente</p>
             </div> 
             `
             formulario.reset();
         }
     });
+
+    setTimeout(() => {
+        var element = document.getElementById('alertacreated');
+        var element2 = document.getElementById('alertaupdate');
+        element.parentNode.removeChild(element);
+        element2.parentNode.removeChild(element2);
+    }, 1000);
 });
 
 function eliminar(id, nombre) {
@@ -61,15 +68,19 @@ function eliminar(id, nombre) {
     .then(res => {
         if(res === 'ok'){
             eliminada.innerHTML = `
-            <div class="alert alert-danger" role="alert">
+            <div class="alert alert-danger" role="alert" id="alerta">
                 La tarea ${nombre} fue eliminada.
             </div>
         `
         listarTareas();
         }
-       
+    
     });
    
+   setTimeout(() => {
+    var element = document.getElementById('alerta');
+    element.parentNode.removeChild(element);
+   }, 1000);
 }
 
 function actualizar(id) {
