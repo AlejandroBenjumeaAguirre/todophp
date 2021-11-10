@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <main class="container">
@@ -21,7 +22,7 @@
                 </div>
             </div>
             <div class="col-md-8 my-5">
-                <div class="card">
+                <div class="card animate__animated animate__fadeIn">
                     <div class="card-header">
                         Tarea
                     </div>
